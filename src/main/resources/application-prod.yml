@@ -4,6 +4,6 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5434/dscatalog}
+    url: ${DB_URL:jdbc:postgresql://localhost:5435/labprog}
     username: ${DB_URL:postgres}
     password: ${DB_PASSWORD:1234567}
