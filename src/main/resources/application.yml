@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: labprog
+    
+    profiles:
+        active: ${APP_PROFILE:test}
+
+    jpa:
+        open-in-view: false
