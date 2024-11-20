@@ -1,5 +1,5 @@
 services:
-  app:
+  app-prod:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,8 +10,12 @@ services:
       - SPRING_DATASOURCE_PASSWORD=123456
     ports:
       - 8090:8080
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    command: mvn spring-boot:run
     networks:
-      - labprog-network
+      - labprog-prod-network
     depends_on:
       db:
         condition: service_healthy
@@ -19,7 +23,7 @@ services:
 
   db:
     image: postgres:14
-    container_name: db-labprog
+    container_name: db-labprog-prod
     environment:
       - POSTGRES_DB=labprog
       - POSTGRES_USER=postgres
@@ -27,7 +31,7 @@ services:
     ports:
       - 5436:5432
     networks:
-      - labprog-network
+      - labprog-prod-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
@@ -35,5 +39,5 @@ services:
       timeout: 5s
       retries: 5
 networks:
-  labprog-network:
+  labprog-prod-network:
     driver: bridge
