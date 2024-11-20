@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
 
   db_dev:
-    image: postgres:14
+    image: postgres:14-alpine
     container_name: db-labprog-dev
     environment:
       - POSTGRES_DB=labprog
