@@ -8,7 +8,7 @@
 
 - **Para parar o projeto em modo de desenvolvimento:**
     ```bash
-    docker-compose -f docker-compose-dev.yml down
+    docker-compose -f docker-compose-dev.yml stop
     ```
 
 - **Para iniciar o projeto em modo de produção:**
@@ -19,5 +19,5 @@
 
 - **Para parar o projeto em modo de produção:**
     ```bash
-    docker-compose -f docker-compose-prod.yml down
+    docker-compose -f docker-compose-prod.yml stop
     ```
