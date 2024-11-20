@@ -17,7 +17,8 @@ services:
     networks:
       - labprog-network
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     restart: unless-stopped
 
   db:
@@ -31,6 +32,12 @@ services:
       - 5435:5432
     networks:
       - labprog-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 networks:
   labprog-network:
