@@ -20,4 +20,4 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5435/labprog
     username: postgres
-    password: 1234567
+    password: 123456
