@@ -3,7 +3,7 @@ spring:
         name: labprog
     
     profiles:
-        active: ${APP_PROFILE:dev}
+        active: ${APP_PROFILE:prod}
 
     jpa:
         open-in-view: false

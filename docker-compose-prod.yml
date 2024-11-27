@@ -8,7 +8,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/labprog
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=123456
-      - SPRING_DEVTOOLS_REMOTE_ENABLED=false
+      - SPRING_DEVTOOLS_RESTART_ENABLED=false
     ports:
       - 8090:8080
     volumes:
