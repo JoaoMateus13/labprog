@@ -41,7 +41,7 @@ public class Qualis {
 
     private String tipo;
 
-    @Column(nullable = false, columnDefinition = "character varying(1) default 'N'")
+    @Column(nullable = false, columnDefinition = "character varying(1)")
     private String avaliaCp;
 
     @ManyToOne
