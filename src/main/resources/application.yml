@@ -3,7 +3,12 @@ spring:
         name: labprog
     
     profiles:
-        active: ${APP_PROFILE:test}
+        active: ${APP_PROFILE:dev}
 
     jpa:
         open-in-view: false
+
+
+    devtools:
+        remote:
+            secret: 123456
